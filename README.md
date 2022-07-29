@@ -17,7 +17,7 @@ To execute the code, open a terminal and type:
 The person at the counter is provided with the following options (see `table` below) 
 and he/she needs to type the `product id` in the command line by typing the corresponding
 numerical value between 1 and 20. Only integer values are recognized by the
-code. When finished adding products, one needs to type the word: `DONE`.
+code. When finished adding products and to calculate the total, one needs to type the word: `DONE`.
 
 `  id                                               name                          aisle       department  price`  
 `   1                         Chocolate Sandwich Cookies                  cookies cakes           snacks   3.50`  
