@@ -1,4 +1,4 @@
-## shopping-cart
+# shopping-cart
 
 # Setup the enviroment and install needed dependencies
 
@@ -15,7 +15,7 @@ To execute the code, open a terminal and type:
 ```
 
 The person at the counter is provided with the following options (see `table` below) 
-and he/she needs to type the product `id` in the command line by typing the corresponding
+and he/she needs to type the `product id` in the command line by typing the corresponding
 numerical value between 1 and 20. Only integer values are recognized by the
 code. When finished adding products, one needs to type the word: `DONE`.
 
@@ -40,4 +40,16 @@ code. When finished adding products, one needs to type the word: `DONE`.
 `  18                Pizza for One Suprema  Frozen Pizza                   frozen pizza           frozen  12.50`  
 `  19   Gluten Free Quinoa Three Cheese & Mushroom Blend        grains rice dried goods  dry goods pasta   3.99`  
 `  20     Pomegranate Cranberry & Aloe Vera Enrich Drink                  juice nectars        beverages   4.25`  
+
+# How to change the TAX_RATE
+
+Upon cloning this github repository (i.e., `git clone
+git@github.com:lcqsigi/shopping-cart.git`). The user needs to create a `.env`
+file in the `main` branch of the repository. The contents of the `.env` need to
+be:
+
+`TAX_RATE = 0.0875`  
+
+Or the correspoding tax rate for the state in which this code is used. Note the
+tax rate in NY is 8.75%.
 
