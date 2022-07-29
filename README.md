@@ -8,6 +8,12 @@
 
 # How to use the code
 
+To execute the code, open a terminal and type:
+ 
+```sh
+ python shopping-cart.py
+```
+
 The person at the counter is provided with the following options (see `table` below) 
 and he/she needs to type the product `id` in the command line by typing the corresponding
 numerical value between 1 and 20. Only integer values are recognized by the
