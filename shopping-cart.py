@@ -40,6 +40,8 @@ while True:
 
 df2=pd.DataFrame(selected_products)
 
+running_total=0
+
 print("-----Roel's Store-----")
 print("-----404 421 2365-----")
 print("----------------------")
@@ -48,5 +50,10 @@ print("----------------------")
 print("SELECTED PRODUCTS:----")
 for x in range(0,len(df2),1):
     print(f"   ...   {df2['name'][x]} ({to_usd(df2['price'][x])})")
+    running_total=running_total+df2["price"][x]
+print("----------------------")
+print(f"SUBTOTAL: {to_usd(running_total)}")
+print(f"TAX: {to_usd(running_total*.0875)}")
+print(f"TOTAL: {to_usd(running_total+running_total*.0875)}")
 print("----------------------")
 print("-----Thank you!!!-----")
