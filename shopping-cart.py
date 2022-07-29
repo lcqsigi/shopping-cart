@@ -21,16 +21,25 @@ while True:
     selected_id = input("Please input a product id, or 'DONE': " )
 
     if selected_id.upper() == "DONE":
-        break # break out of the while loop 
+        break 
+
+    if str(selected_id) ==str(0):
+        print("Invalid option try only numbers [1-20]")
 
     if selected_id not in str(valid_options):
         print("Invalid option try only numbers [1-20]")
 
-    else:
+    if selected_id in str(valid_options) and int(selected_id) > 0:
         print("LOOKING UP PRODUCT", selected_id)
         for x in range(0,len(df),1):
             if str(selected_id) == str(df["id"][x]):
                 matching_product = str(df["name"][x])
         selected_products.append(matching_product)
-        # continue the while loop
+
+print("-----Roel's Store-----")
+print("-----404 421 2365-----")
+
+print(f"CHECKOUT: {datetime.datetime.now().strftime('%m/%d/%y %I:%M %p')}") 
+
+print("-----Thank you!!!-----")
 print(selected_products)
