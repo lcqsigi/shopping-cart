@@ -1,5 +1,8 @@
 import pandas as pd
 import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv() 
 
 def to_usd(my_price):
     return f"${my_price:,.2f}" #> $12,000.71
@@ -42,10 +45,13 @@ df2=pd.DataFrame(selected_products)
 
 running_total=0
 
+tax_rate=float(os.getenv("TAX_RATE"))
+
+print("----------------------")
 print("-----Roel's Store-----")
 print("-----404 421 2365-----")
 print("----------------------")
-print(f"CHECKOUT: {datetime.datetime.now().strftime('%m/%d/%y %I:%M %p')}") 
+print(f"CHECKOUT: {datetime.datetime.now().strftime('%y-%m-%d %I:%M %p')}") 
 print("----------------------")
 print("SELECTED PRODUCTS:----")
 for x in range(0,len(df2),1):
@@ -53,7 +59,8 @@ for x in range(0,len(df2),1):
     running_total=running_total+df2["price"][x]
 print("----------------------")
 print(f"SUBTOTAL: {to_usd(running_total)}")
-print(f"TAX: {to_usd(running_total*.0875)}")
-print(f"TOTAL: {to_usd(running_total+running_total*.0875)}")
+print(f"TAX: {to_usd(running_total*tax_rate)}")
+print(f"TOTAL: {to_usd(running_total+running_total*tax_rate)}")
 print("----------------------")
 print("-----Thank you!!!-----")
+print("----------------------")
