@@ -1,1 +1,1 @@
-# shopping-cart`conda create -n shopping-env python=3.8\n``conda activate shopping-env\n``pip install -r requirements.txt\n`
+# shopping-cart`conda create -n shopping-env python=3.8conda activate shopping-envpip install -r requirements.txt`
