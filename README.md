@@ -50,6 +50,5 @@ be:
 
 `TAX_RATE = 0.0875`  
 
-Or the correspoding tax rate for the state in which this code is used. Note the
-tax rate in NY is 8.75%.
-
+Note the that the tax rate in NY is 8.75%. The tax rate value needs to be
+updated accordingly in the `.env` file.
