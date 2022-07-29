@@ -11,7 +11,6 @@ products_url="https://raw.githubusercontent.com/prof-rossetti/intro-to-python/ma
 #     2                                   All-Seasons Salt              spices seasonings           pantry   4.99
 
 df=pd.read_csv(products_url)
-print(df.head(20))
 
 valid_options = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
@@ -30,16 +29,24 @@ while True:
         print("Invalid option try only numbers [1-20]")
 
     if selected_id in str(valid_options) and int(selected_id) > 0:
+        dict1={}
         print("LOOKING UP PRODUCT", selected_id)
         for x in range(0,len(df),1):
             if str(selected_id) == str(df["id"][x]):
-                matching_product = str(df["name"][x])
-        selected_products.append(matching_product)
+                #matching_product = str(df["name"][x])
+                dict1["name"]=str(df["name"][x])
+                dict1["price"]=float(df["price"][x])
+        selected_products.append(dict1)
+
+df2=pd.DataFrame(selected_products)
 
 print("-----Roel's Store-----")
 print("-----404 421 2365-----")
-
+print("----------------------")
 print(f"CHECKOUT: {datetime.datetime.now().strftime('%m/%d/%y %I:%M %p')}") 
-
+print("----------------------")
+print("SELECTED PRODUCTS:----")
+for x in range(0,len(df2),1):
+    print(f"   ...   {df2['name'][x]} ({to_usd(df2['price'][x])})")
+print("----------------------")
 print("-----Thank you!!!-----")
-print(selected_products)
